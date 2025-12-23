@@ -1,0 +1,115 @@
+<html>
+<head>
+  <title>Jack Mason</title>
+</head>
+<body>
+
+  <table align="center" cellpadding="10">
+    <tr>
+      <td align="center">
+
+        <span style="font-size:28px; font-weight:bold;">
+          <a href="about.html" style="text-decoration:none; color:black;">
+            Jack Mason
+          </a>
+        </span>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <span style="font-size:16px;">
+          <a href="cover.html">Home</a>&nbsp;&nbsp;
+          <a href="research.html">Research</a>&nbsp;&nbsp;
+          <a href="blog.html">Blog</a>&nbsp;&nbsp;
+          <a href="natty_park.html">National Parks</a>
+        </span>
+
+      </td>
+    </tr>
+  </table>
+
+  <hr width="100%">
+
+  <!-- TOP FEATURE: LATEST BLOG POST -->
+<div id="latestPost" align="center">Loading latest post...</div>
+
+<script>
+  fetch("latest.json")
+    .then(response => response.json())
+    .then(post => {
+      const publishedDate = new Date(post.published);
+      const today = new Date();
+
+      publishedDate.setHours(0,0,0,0);
+      today.setHours(0,0,0,0);
+
+      const daysSince = Math.floor(
+        (today - publishedDate) / (1000 * 60 * 60 * 24)
+      );
+
+      document.getElementById("latestPost").innerHTML = `
+        <div style="font-size:14px; letter-spacing:1px; text-transform:uppercase; color:#444;">
+          Latest Post
+        </div>
+
+        <div style="margin-top:6px; font-size:24px; font-weight:bold;">
+          <a href="${post.url}" style="text-decoration:none; color:black;">
+            ${post.title}
+          </a>
+          <span style="font-size:14px; font-weight:normal; color:#555;">
+            — ${daysSince} day${daysSince === 1 ? "" : "s"} since last publish
+          </span>
+        </div>
+
+        <div style="margin-top:10px;">
+          <a href="${post.url}">
+            <img src="${post.cover}" width="650" alt="Latest blog post cover">
+          </a>
+        </div>
+
+        <div style="margin-top:10px; font-size:14px; color:#444; line-height:1.5;">
+          ${post.excerpt}
+        </div>
+      `;
+    })
+    .catch(error => {
+      document.getElementById("latestPost").innerHTML =
+        "Could not load latest post.";
+      console.error(error);
+    });
+</script>
+
+  <!-- IMAGE PORTAL TO MAIN PAGES -->
+  <table align="center" cellpadding="12" border="0">
+    <tr>
+      <td align="center">
+        <a href="research.html" style="text-decoration:none; color:black;">
+          <img src="images/research-tile.jpg" width="220" alt="Research">
+          <div style="margin-top:6px; font-size:16px; font-weight:bold;">Research</div>
+          <div style="font-size:13px; color:#444;">Equity & economic reports</div>
+        </a>
+      </td>
+
+      <td align="center">
+        <a href="blog.html" style="text-decoration:none; color:black;">
+          <img src="images/blog-tile.jpg" width="220" alt="Blog">
+          <div style="margin-top:6px; font-size:16px; font-weight:bold;">Blog</div>
+          <div style="font-size:13px; color:#444;">Writing & reflections</div>
+        </a>
+      </td>
+
+      <td align="center">
+        <a href="natty_park.html" style="text-decoration:none; color:black;">
+          <img src="images/parks-tile.jpg" width="220" alt="National Parks">
+          <div style="margin-top:6px; font-size:16px; font-weight:bold;">National Parks</div>
+          <div style="font-size:13px; color:#444;">Trips, photos, field notes</div>
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <br><br>
+
+
+
+</body>
+</html>

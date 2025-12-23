@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jack Mason - Blog</title>
+</head>
+<body>
+
+  <!-- SAME HEADER / BANNER -->
+    <table align="center" cellpadding="10">
+    <tr>
+      <td align="center">
+
+        <span style="font-size:28px; font-weight:bold;">
+          <a href="cover.html" style="text-decoration:none; color:black;">
+            Jack Mason
+          </a>
+        </span>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <span style="font-size:16px;">
+          <a href="about.html">About</a>&nbsp;&nbsp;
+          <a href="research.html">Research</a>&nbsp;&nbsp;
+          <a href="blog.html">Blog</a>&nbsp;&nbsp;
+          <a href="natty_park.html">National Parks</a>
+        </span>
+
+      </td>
+    </tr>
+  </table>
+
+  <hr width="100%">
+
+
+  <!-- PAGE TITLE -->
+  <div align="center" style="font-size:56px; font-weight:bold; margin-top:18px;">
+    Blog Posts
+  </div>
+
+  <!-- OPTIONAL: days since last post (auto) -->
+  <div id="daysSince" align="center" style="margin-top:8px; font-size:14px;">
+    days since last post: —
+  </div>
+
+  <br>
+
+  <!-- POSTS LIST -->
+  <table align="center" cellpadding="6" border="0">
+    <tr>
+      <td><strong>12/22/25</strong></td>
+      <td><a href="blog_posts/post1.html">Reflection on Semester 3</a></td>
+    </tr>
+  
+    <!-- Add more rows as you write -->
+  </table>
+
+  <!-- AUTO days-since script (uses latest.json) -->
+  <script>
+  fetch("latest.json")
+    .then(r => r.json())
+    .then(post => {
+
+      const parts = post.published.split("-");
+      const publishedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+      const today = new Date();
+
+      // normalize both to local midnight
+      publishedDate.setHours(0,0,0,0);
+      today.setHours(0,0,0,0);
+
+      const daysSince = Math.round(
+        (today - publishedDate) / (1000 * 60 * 60 * 24)
+      );
+
+      document.getElementById("daysSince").innerText =
+        "days since last post: " + daysSince;
+
+    })
+    .catch(() => {
+      // If latest.json missing/bad, just leave the text alone
+    });
+</script>
+
+
+</body>
+</html>

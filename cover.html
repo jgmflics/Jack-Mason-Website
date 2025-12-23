@@ -1,0 +1,154 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jack Mason</title>
+</head>
+<body>
+
+  <table align="center" cellpadding="10">
+    <tr>
+      <td align="center">
+
+        <span style="font-size:28px; font-weight:bold;">
+          <a href="cover.html" style="text-decoration:none; color:black;">
+            Jack Mason
+          </a>
+        </span>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;
+
+        <span style="font-size:16px;">
+          <a href="about.html">About</a>&nbsp;&nbsp;
+          <a href="research.html">Research</a>&nbsp;&nbsp;
+          <a href="blog.html">Blog</a>&nbsp;&nbsp;
+          <a href="natty_park.html">National Parks</a>
+        </span>
+
+      </td>
+    </tr>
+  </table>
+
+  <hr width="100%">
+<!-- MAIN HOME LAYOUT: LEFT = LATEST POST, RIGHT = 3 STACKED LINKS -->
+<table align="center" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+
+    <!-- LEFT COLUMN (right-aligned toward the center gap) -->
+    <td width="580" align="right" valign="top">
+      <div id="latestPost">Loading latest post...</div>
+    </td>
+
+    <!-- FIXED GAP -->
+    <td width="70"></td>
+
+    <!-- RIGHT COLUMN (left-aligned toward the center gap) -->
+    <td width="420" align="left" valign="top">
+
+      <table width="420" cellpadding="15" border="1" style="border-collapse:collapse;">
+        <tr>
+          <td align="center">
+            <a href="research.html" style="text-decoration:none; color:black;">
+              <img src="research_cover.jpg"
+                   style="width:100%; max-width:360px; height:170px; object-fit:cover;"
+                   alt="Research">
+              <div style="margin-top:6px; font-size:16px; font-weight:bold;">Research Reports</div>
+              <div style="font-size:13px; color:black;"></div>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <a href="blog.html" style="text-decoration:none; color:black;">
+              <img src="blog_cover.jpg"
+                   style="width:100%; max-width:360px; height:170px; object-fit:cover;"
+                   alt="Blog">
+              <div style="margin-top:6px; font-size:16px; font-weight:bold;">Blog</div>
+              <div style="font-size:13px; color:black;"></div>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+            <a href="natty_park.html" style="text-decoration:none; color:black;">
+              <img src="natty_park_cover1.jpg"
+                   style="width:100%; max-width:360px; height:170px; object-fit:cover;"
+                   alt="National Parks">
+              <div style="margin-top:6px; font-size:16px; font-weight:bold;">National Parks</div>
+              <div style="font-size:13px; color:black;"></div>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+
+  </tr>
+</table>
+
+
+  <!-- SCRIPT THAT FILLS IN LATEST POST -->
+<script>
+  fetch("latest.json")
+    .then(response => response.json())
+    .then(post => {
+
+      const parts = post.published.split("-");
+      const publishedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+
+      const today = new Date();
+
+      // normalize both to local midnight
+      publishedDate.setHours(0,0,0,0);
+      today.setHours(0,0,0,0);
+
+      const daysSince = Math.round(
+        (today - publishedDate) / (1000 * 60 * 60 * 24)
+      );
+
+      document.getElementById("latestPost").innerHTML = `
+        <div style="
+          border:1px solid black;
+          padding:12px;
+          max-width:560px;
+          margin:0 0 0 auto;
+          text-align:center;
+        ">
+
+          <div style="font-size:14px; letter-spacing:1px; text-transform:uppercase;">
+            Latest Post
+          </div>
+
+          <div style="margin-top:6px; font-size:24px; font-weight:bold;">
+            <a href="${post.url}" style="text-decoration:none; color:black;">
+              ${post.title}
+            </a>
+            <span style="font-size:14px; font-weight:normal;">
+              — ${daysSince} day${daysSince === 1 ? "" : "s"} since last publish
+            </span>
+          </div>
+
+          <div style="margin-top:10px;">
+            <a href="${post.url}">
+              <img src="${post.cover}"
+                   style="width:100%; height:590px; object-fit:cover;"
+                   alt="Latest blog post cover">
+            </a>
+          </div>
+
+        </div>
+      `;
+    })
+    .catch(error => {
+      document.getElementById("latestPost").innerHTML =
+        "Could not load latest post.";
+      console.error(error);
+    });
+</script>
+
+
+  <br><br>
+
+</body>
+</html>
