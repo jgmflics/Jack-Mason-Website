@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opinion on Crypto Asset Managing Equities</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER / NAV -->
+  <table align="center" cellpadding="10">
+    <tr>
+      <td align="center">
+        <span style="font-size:28px; font-weight:bold;">
+          <a href="../cover.html" style="text-decoration:none; color:black;">Your Name</a>
+        </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="font-size:16px;">
+          <a href="../cover.html">Home</a>&nbsp;&nbsp;
+          <a href="../research.html">Research</a>&nbsp;&nbsp;
+          <a href="../blog.html">Blog</a>&nbsp;&nbsp;
+          <a href="../opinions.html">Opinions</a>
+        </span>
+      </td>
+    </tr>
+  </table>
+
+  <hr width="100%">
+
+  <!-- POST CONTENT -->
+  <table align="center" width="800" cellpadding="10">
+    <tr>
+      <td>
+
+        <h1>Opinion on Crypto Asset Managing Equities (BMNR and MSTR)</h1>
+        <div style="color:#777; font-size:14px; margin-bottom:20px;">
+          December 28, 2025 · Investment Opinion
+        </div>
+
+        <p>
+         I occasionally like to look at Finviz and sort by small-cap or greater companies with the lowest P/E to see if some stocks with smaller caps (with probably less analyst coverage) have pricing asymmetries with possible value plays. Near the bottom, I found a trend that there were a few publicly traded crypto managing companies, like BitMine Immersion Technologies Inc. and Strategy Inc., that were trading at sub-7 P/E ratios, and it got me interested in researching how these companies operate, generate revenue, and preliminary thoughts to see if these would be a good investment. One thing that stood out to me right away was their extremely high P/S ratios.</p>
+
+        <p>
+         Focusing on BMNR, I saw that they had a revenue of ~$6 million and shares outstanding of 24.5 million. With a current share price of ~$28, that's a P/S of over 114x. Contrast that with its tiny P/E, and I was really intrigued to dive deeper into its financials. I found that looking at EPS numbers for companies like these can be very misleading. In BMNR’s case, they have two income statement line items that can heavily distort EPS, such as warrant expense and unrealized gain on digital assets held (or any other item related to unrealized gains on their underlying crypto assets). They reported warrant expenses of ~$349 million and unrealized gains of over $805 million. This saw gross profit jump from ~$300 thousand to ~$440 million EBT. Naturally, after seeing this, I moved to the statement of cash flows. I saw that from operating activities, they lost ~$4.1 million, a worrying sign if you wanted to invest in this equity based on its business operations.</p>
+
+        <p>
+   But if we’re being honest, if you wanted to separate the operational risk but still be involved in crypto, you would just buy the underlying. The benefits from holding this equity come from gaining ownership of a more efficient mining operation and from the ability to use leverage (by raising debt and equity) to purchase the underlying. You also gain industry expertise from their C-suite, who would hopefully make better decisions about crypto purchasing and selling than a regular crypto investor.
+        </p>
+
+        <p>
+          The problem with this model is that when crypto prices fall, you are exposed to a substantially greater downside than if you just owned the underlying, as you see margins crushed, potential forced sell-offs, need to raise more money to fuel operations, etc. So if the prices of the underlying (or I should say where the prices are heading) are the most important factor to consider when choosing to invest, what do those prices and trends look like?
+        </p>
+
+        <p>
+     At face value, BTC, since August 1st, has fallen 24.3% while ETH has 13.7% over the same period. BMNR has fallen 10.6% during that time, so it has shown some downside protection against institutional sell offs of the underlying (the same CANNOT be said for MSTR). While I am no expert in crypto or price prediction, from a macroeconomic perspective, given my outlook on the price of Bitcoin in the near to medium term, it is too risky to allocate a large amount of capital. Bitcoin generally appreciates when liquidity is improving, volatility is falling, and the market’s overall appetite for risk is increasing.   </p>
+
+<p> Evaluating our current market, there are definitely some positive indicators. Since September, the FFR has seen three rate cuts with more planned for FY26, meaning that liquidity will further increase. With these rate cuts, you will probably see the dollar weaken as NCO increases, which is a good indicator for crypto investment. Some additional positive indicators are the trends of volatility decreasing (VIX) and a general tightening of credit spreads.
+<p>But, despite this general decrease in VIX compared to earlier in the year, there is still a lot of outside noise concerning market levels, with ideas surrounding a “tech bubble” frequently being thrown around. In my opinion, the general crypto market was seen as more acceptable by institutions over the past two years, but with it hitting record highs and concerns about the valuation of other equities and assets, these investors felt it was too risky to keep holding on, so they sold off more. With BTC futures hitting near year-long lows, it seems there is little going for BTC in the near future, and the potential for a decline in the prices of these asset managers appears too great. Not to mention that with CPI data indicating inflation trending downwards, yet energy prices still increasing, mining operations seem increasingly less profitable. It also might be a bad sign that, even with concern about the valuation of tech stocks, major indices have seen major growth over the past 6 months, a clear asymmetry to crypto.
+<p>Even with the increased liquidity, it appears that it is flowing into equities rather than riskier crypto assets, which doesn’t directly help companies like BMNR and MSTR. It’s also true that these companies are inherently incredibly risky, and removal from crypto ETFs and forced sell-offs are entirely possible. Overall, I feel like the return required for this level of risk is just too high to warrant an investment, and until BTC and ETH show renewed strength through a flow of liquidity to them (as opposed to other assets like equities) and institutional purchases, it likely will stay too risky.
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
